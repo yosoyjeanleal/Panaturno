@@ -29,7 +29,7 @@ const ESTADOS = {
 const PALETA = ["#6366f1","#f43f5e","#0ea5e9","#f59e0b","#10b981","#8b5cf6","#ec4899","#f97316","#14b8a6","#ef4444"];
 
 // ── Logo SVG inline — cambia color con el prop `color`
-function LogoSVG({ color = "#fc0000ff", height = 32 }) {
+function LogoSVG({ color = "#ffffff", height = 32 }) {
   return (
     <svg height={height} viewBox="0 0 935.4 1360.6" xmlns="http://www.w3.org/2000/svg" style={{ display:"block", flexShrink:0 }}>
       <path fill={color} d="M460,768c-31,0-62,0.5-93-0.1c-47.7-0.9-81.6-24.1-102.1-66.7c-6.8-14.1-9.6-29.4-9.6-45.1c0-63.5-0.3-127,0.1-190.5c0.3-52.2,41.9-99,93.7-106.5c6.1-0.9,12.3-1.1,18.4-1.1c61.8,0,123.7,0.6,185.5-0.2c54.3-0.7,101.6,38.9,110.8,92.1c1.1,6.1,1.6,12.2,1.6,18.4c0,62-0.2,124,0.1,186c0.3,51.5-32.3,93.4-77.1,108.4c-11.6,3.9-23.7,5.4-35.9,5.3C521.7,768.1,490.8,768.1,460,768z"/>
@@ -251,6 +251,30 @@ export default function App() {
   const [filtroEstado, setFiltroEstado] = useState("todos");
   const [filtroFecha, setFiltroFecha]   = useState("todas");
   const [busqueda, setBusqueda]         = useState("");
+  const [dark, setDark] = useState(() => {
+    try { return localStorage.getItem("pt_dark") === "1"; } catch { return false; }
+  });
+  const toggleDark = () => setDark(p => {
+    try { localStorage.setItem("pt_dark", p ? "0" : "1"); } catch {}
+    return !p;
+  });
+  const T = dark ? {
+    bodyBg:"#0f172a", headerBg:"linear-gradient(135deg,#020617,#0f172a)",
+    rowBg:"#1e293b", rowHover:"#293548", rowBorderDiv:"#293548",
+    textPrimary:"#f1f5f9", textSec:"#94a3b8",
+    searchBg:"rgba(255,255,255,.08)", searchColor:"#f1f5f9",
+    breakBg:"#162032", chipInactive:"rgba(255,255,255,.1)", chipColor:"rgba(255,255,255,.6)",
+    chevron:"#475569", scrollThumb:"#334155",
+    infoTag:"#293548", infoTagText:"#94a3b8",
+  } : {
+    bodyBg:"#f1f5f9", headerBg:"linear-gradient(135deg,#0f172a,#1e293b)",
+    rowBg:"#ffffff", rowHover:"#f8fafc", rowBorderDiv:"#f1f5f9",
+    textPrimary:"#0f172a", textSec:"#64748b",
+    searchBg:"rgba(255,255,255,.96)", searchColor:"#0f172a",
+    breakBg:"#f1f5f9", chipInactive:"rgba(255,255,255,.12)", chipColor:"rgba(255,255,255,.65)",
+    chevron:"#d1d5db", scrollThumb:"#c7d2fe",
+    infoTag:"#f8fafc", infoTagText:"#475569",
+  };
 
   const loadData = url => {
     setLoading(true);
@@ -313,23 +337,23 @@ export default function App() {
         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap');
         *{box-sizing:border-box;margin:0;padding:0;}
         html{overflow-y:scroll;}
-        body{background:#f1f5f9;font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden;}
+        body{background:${T.bodyBg};font-family:'DM Sans',system-ui,sans-serif;overflow-x:hidden;}
         ::-webkit-scrollbar{width:4px;}
         ::-webkit-scrollbar-track{background:transparent;}
-        ::-webkit-scrollbar-thumb{background:#c7d2fe;border-radius:99px;}
+        ::-webkit-scrollbar-thumb{background:${T.scrollThumb};border-radius:99px;}
         @keyframes fadeIn{from{opacity:0}to{opacity:1}}
         @keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
         @keyframes fadeUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
         @keyframes spin{to{transform:rotate(360deg)}}
         .row{transition:background .12s;cursor:pointer;}
-        .row:hover{background:#f8fafc !important;}
+        .row:hover{background:${T.rowHover} !important;}
         .row:active{transform:scale(.99);}
         .fchip{transition:all .15s;cursor:pointer;font-family:inherit;}
         .fchip:hover{filter:brightness(1.1);transform:scale(1.04);}
       `}</style>
 
       {/* ══ HEADER sticky ══ */}
-      <div style={{ background:"linear-gradient(135deg,#0f172a 0%,#1e293b 100%)",
+      <div style={{ background:T.headerBg,
         padding:"18px 16px 14px",
         position:"sticky", top:0, zIndex:50,
         boxShadow:"0 4px 24px rgba(0,0,0,.35)" }}>
@@ -367,6 +391,17 @@ export default function App() {
               </div>
             ))}
           </div>
+
+          {/* Dark mode toggle */}
+          <button onClick={toggleDark} style={{
+            width:36, height:36, borderRadius:10, flexShrink:0,
+            border:"1.5px solid rgba(255,255,255,.15)",
+            background:"rgba(255,255,255,.1)",
+            display:"flex", alignItems:"center", justifyContent:"center",
+            cursor:"pointer", fontSize:18, transition:"all .2s",
+          }} title={dark ? "Modo claro" : "Modo oscuro"}>
+            {dark ? "☀️" : "🌙"}
+          </button>
         </div>
 
         {/* Search */}
@@ -477,7 +512,7 @@ export default function App() {
               if (isBreak) return (
                 <div key={ev.id} style={{ display:"flex", alignItems:"center", gap:12,
                   padding:"10px 16px", margin:"3px 12px",
-                  background:"#f1f5f9", borderRadius:12,
+                  background:T.breakBg, borderRadius:12,
                   animation:`fadeUp .3s ease ${i*40}ms both` }}>
                   <span style={{ fontSize:18 }}>☕</span>
                   <div>
@@ -493,8 +528,8 @@ export default function App() {
                 <div key={ev.id} className="row"
                   onClick={() => setSelected(ev)}
                   style={{ display:"flex", alignItems:"center",
-                    padding:"0 16px", background:"#fff",
-                    borderBottom:"1px solid #f1f5f9",
+                    padding:"0 16px", background:T.rowBg,
+                    borderBottom:`1px solid ${T.rowBorderDiv}`,
                     animation:`fadeUp .35s ease ${i*50}ms both` }}>
 
                   {/* Timeline */}
@@ -523,7 +558,7 @@ export default function App() {
                           overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap" }}>
                           {ev.grupo}
                         </p>
-                        <p style={{ fontSize:12, color:"#64748b", lineHeight:1.5, marginBottom:6,
+                        <p style={{ fontSize:12, color:T.textSec, lineHeight:1.5, marginBottom:6,
                           overflow:"hidden", display:"-webkit-box",
                           WebkitLineClamp:1, WebkitBoxOrient:"vertical" }}>
                           {ev.propuesta}
@@ -556,8 +591,8 @@ export default function App() {
                           )}
                         </div>
                       )}
-                      {ev.salon && <span style={{ fontSize:10, color:"#94a3b8", fontWeight:600 }}>🏫 {ev.salon}</span>}
-                      {ev.profesor && <span style={{ fontSize:10, color:"#94a3b8", fontWeight:600 }}>· 👤 {ev.profesor}</span>}
+                      {ev.salon && <span style={{ fontSize:10, color:T.infoTagText, fontWeight:600 }}>🏫 {ev.salon}</span>}
+                      {ev.profesor && <span style={{ fontSize:10, color:T.infoTagText, fontWeight:600 }}>· 👤 {ev.profesor}</span>}
                       {ev.materia && (
                         <span style={{ fontSize:9.5, fontWeight:700, color:ev.color,
                           background:`${ev.color}15`, padding:"2px 7px",
@@ -566,7 +601,7 @@ export default function App() {
                     </div>
                   </div>
 
-                  <span style={{ color:"#d1d5db", fontSize:18, paddingLeft:8, flexShrink:0 }}>›</span>
+                  <span style={{ color:T.chevron, fontSize:18, paddingLeft:8, flexShrink:0 }}>›</span>
                 </div>
               );
             })}
