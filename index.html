@@ -1,3 +1,6 @@
+Index · HTML
+Copiar
+
 <!doctype html>
 <html lang="es">
   <head>
@@ -8,7 +11,7 @@
     <style>
       *{box-sizing:border-box;margin:0;padding:0;}
       body{overflow-x:hidden;background:#f8fafc;}
-
+ 
       /* ── PRELOADER ── */
       #preloader{
         position:fixed;inset:0;z-index:99999;
@@ -18,9 +21,9 @@
         transition:opacity .5s ease, visibility .5s ease;
       }
       #preloader.hidden{opacity:0;visibility:hidden;pointer-events:none;}
-
-      #preloader svg{ width:180px; }
-
+ 
+      #preloader svg{ width:280px; }
+ 
       #preloader p{
         font-family:system-ui,sans-serif;
         font-size:13px;font-weight:700;
@@ -29,7 +32,7 @@
         animation:pulse 1.2s ease-in-out infinite;
       }
       @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-
+ 
       /* barra de carga */
       .bar-wrap{
         width:140px;height:3px;
@@ -45,7 +48,7 @@
         50%{width:70%;margin-left:15%}
         100%{width:0%;margin-left:100%}
       }
-
+ 
       /* ojo parpadeo */
       #ojo{
         transform-box:fill-box;transform-origin:center;
@@ -69,7 +72,7 @@
     </style>
   </head>
   <body>
-
+ 
     <!-- PRELOADER — se muestra antes de que React cargue -->
     <div id="preloader">
       <svg viewBox="0 0 935.4 1360.6" xmlns="http://www.w3.org/2000/svg">
@@ -97,9 +100,9 @@
       <div class="bar-wrap"><div class="bar-fill"></div></div>
       <p>Cargando PanaTurno…</p>
     </div>
-
+ 
     <div id="root"></div>
-
+ 
     <script>
       // Esconder preloader cuando React monte
       window.__hidePreloader = function() {
