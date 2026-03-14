@@ -12,5 +12,5 @@ root.render(
 
 // Ocultar preloader cuando React termina de montar
 if (window.__hidePreloader) {
-  setTimeout(window.__hidePreloader, 800)
+  setTimeout(window.__hidePreloader, 300)
 }
