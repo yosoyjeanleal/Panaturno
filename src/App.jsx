@@ -5,7 +5,7 @@ import Papa from "papaparse";
 //  CONFIGURACIÓN — pega aquí tu URL de Google Sheet CSV
 // ══════════════════════════════════════════════════════
 const GOOGLE_SHEET_CSV_URL =
-  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiK0_5iOHK73-cz5TrugjkQNNgOSOWHncP37MNl0eFqMh94Bgysu578J4PV6H_y1gDj2wq_KQoiosa/pub?output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiK0_5iOHK73-cz5TrugjkQNNgOSOWHncP37MNl0eFqMh94Bgysu578J4PV6H_y1gDj2wq_KQoiosa/pub?gid=0&single=true&output=csv";
 
 // ══════════════════════════════════════════════════════
 //  DATOS DEMO
