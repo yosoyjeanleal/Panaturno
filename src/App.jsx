@@ -5,7 +5,7 @@ import Papa from "papaparse";
 //  CONFIGURACIÓN — pega aquí tu URL de Google Sheet CSV
 // ══════════════════════════════════════════════════════
 const GOOGLE_SHEET_CSV_URL =
-  "https://docs.google.com/spreadsheets/d/1wNhWAAAS5tXGRXj1qg3hHPuVSe1Izs8_sekXK0yiAmo/pub?gid=0&single=true&output=csv";
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vRiK0_5iOHK73-cz5TrugjkQNNgOSOWHncP37MNl0eFqMh94Bgysu578J4PV6H_y1gDj2wq_KQoiosa/pubhtml?gid=0&single=true";
 
 const DEMO_DATA = [
   { id:"1", grupo:"Equipo Alpha", integrantes:"Carlos Pérez, María González, Luis Rodríguez", propuesta:"Sistema de Gestión de Inventarios con IA", materia:"Proyecto Final", profesor:"Dr. Ramírez", fecha:"2025-06-10", hora_inicio:"08:00", hora_fin:"08:30", salon:"Aula 301", estado:"proximo", notas:"Presentar mockups y diagrama de base de datos", color:"#6366f1" },
