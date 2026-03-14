@@ -360,7 +360,7 @@ export default function App() {
         {/* Logo row */}
         <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:14 }}>
           {/* Logo SVG en blanco */}
-          <LogoSVG color="#ffffff" height={34} />
+          <LogoSVG color="#000000ff" height={34} />
 
           <div style={{ flex:1, minWidth:0 }}>
             <p style={{ fontSize:8.5, color:"rgba(255,255,255,.4)",
