@@ -365,7 +365,7 @@ export default function App() {
           <div style={{ flex:1, minWidth:0 }}>
             <p style={{ fontSize:8.5, color:"rgba(255,255,255,.4)",
               letterSpacing:2, textTransform:"uppercase", fontWeight:700, marginBottom:0 }}>
-              Sistema de Turnos
+              
             </p>
             {usingDemo && (
               <span style={{ background:"#fbbf24", color:"#78350f",
