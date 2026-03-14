@@ -29,7 +29,7 @@ const ESTADOS = {
 const PALETA = ["#6366f1","#f43f5e","#0ea5e9","#f59e0b","#10b981","#8b5cf6","#ec4899","#f97316","#14b8a6","#ef4444"];
 
 // ── Logo SVG inline — cambia color con el prop `color`
-function LogoSVG({ color = "#ffffff", height = 32 }) {
+function LogoSVG({ color = "#fc0000ff", height = 32 }) {
   return (
     <svg height={height} viewBox="0 0 935.4 1360.6" xmlns="http://www.w3.org/2000/svg" style={{ display:"block", flexShrink:0 }}>
       <path fill={color} d="M460,768c-31,0-62,0.5-93-0.1c-47.7-0.9-81.6-24.1-102.1-66.7c-6.8-14.1-9.6-29.4-9.6-45.1c0-63.5-0.3-127,0.1-190.5c0.3-52.2,41.9-99,93.7-106.5c6.1-0.9,12.3-1.1,18.4-1.1c61.8,0,123.7,0.6,185.5-0.2c54.3-0.7,101.6,38.9,110.8,92.1c1.1,6.1,1.6,12.2,1.6,18.4c0,62-0.2,124,0.1,186c0.3,51.5-32.3,93.4-77.1,108.4c-11.6,3.9-23.7,5.4-35.9,5.3C521.7,768.1,490.8,768.1,460,768z"/>
