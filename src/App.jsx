@@ -6,27 +6,27 @@ const GOOGLE_SHEET_CSV_URL =
 
 const DEMO_DATA = [
   { id:"1", grupo:"Equipo Alpha", integrantes:"Carlos Pérez, María González, Luis Rodríguez", propuesta:"Sistema de Gestión de Inventarios con IA", materia:"Proyecto Final", profesor:"Dr. Ramírez", fecha:"2025-06-10", hora_inicio:"08:00", hora_fin:"08:30", salon:"Aula 301", estado:"proximo", notas:"Presentar mockups y diagrama de base de datos", color:"#6366f1" },
-  { id:"2", grupo:"Los Innovadores", integrantes:"Ana Martínez, Pedro Sánchez, Sofía Torres", propuesta:"App Móvil para Registro de Asistencia", materia:"Proyecto Final", profesor:"Dra. López", fecha:"2025-06-10", hora_inicio:"08:30", hora_fin:"09:00", salon:"Aula 301", estado:"en_discusion", notas:"Revisar arquitectura del sistema", color:"#0ea5e9" },
-  { id:"3", grupo:"Tech Visión", integrantes:"Roberto Díaz, Carmen Núñez, Jorge Herrera", propuesta:"Plataforma E-learning Adaptativa", materia:"Proyecto Final", profesor:"Dr. Ramírez", fecha:"2025-06-10", hora_inicio:"09:00", hora_fin:"09:30", salon:"Aula 301", estado:"pendiente", notas:"", color:"#10b981" },
-  { id:"DESCANSO1", grupo:"DESCANSO", integrantes:"", propuesta:"Receso entre bloques", materia:"", profesor:"", fecha:"2025-06-10", hora_inicio:"09:30", hora_fin:"09:45", salon:"", estado:"descanso", notas:"", color:"#94a3b8" },
-  { id:"4", grupo:"DataSmart", integrantes:"Elena Vargas, Miguel Castro, Daniela Morales", propuesta:"Dashboard de Analítica para PYMES", materia:"Proyecto Final", profesor:"Dra. López", fecha:"2025-06-10", hora_inicio:"09:45", hora_fin:"10:15", salon:"Aula 301", estado:"finalizado", notas:"Excelente presentación, muy completa", color:"#a855f7" },
-  { id:"5", grupo:"CloudBuilders", integrantes:"Andrés Medina, Valentina Cruz, Nicolás Reyes", propuesta:"Sistema de Monitoreo IoT para Campus", materia:"Seminario de Investigación", profesor:"Dr. Ramírez", fecha:"2025-06-11", hora_inicio:"10:00", hora_fin:"10:30", salon:"Laboratorio A", estado:"cancelado", notas:"Reprogramado para la próxima semana", color:"#ef4444" },
-  { id:"6", grupo:"GreenCode", integrantes:"Isabella Flores, Santiago Ruiz, Camila Jiménez", propuesta:"Gestión Sostenible de Recursos Hídricos", materia:"Seminario de Investigación", profesor:"Dra. López", fecha:"2025-06-11", hora_inicio:"10:30", hora_fin:"11:00", salon:"Laboratorio A", estado:"proximo", notas:"", color:"#22c55e" },
+  { id:"2", grupo:"Los Innovadores", integrantes:"Ana Martínez, Pedro Sánchez, Sofía Torres", propuesta:"App Móvil para Registro de Asistencia", materia:"Proyecto Final", profesor:"Dra. López", fecha:"2025-06-10", hora_inicio:"08:30", hora_fin:"09:00", salon:"Aula 301", estado:"en_discusion", notas:"Revisar arquitectura del sistema", color:"#f43f5e" },
+  { id:"3", grupo:"Tech Visión", integrantes:"Roberto Díaz, Carmen Núñez, Jorge Herrera", propuesta:"Plataforma E-learning Adaptativa", materia:"Proyecto Final", profesor:"Dr. Ramírez", fecha:"2025-06-10", hora_inicio:"09:00", hora_fin:"09:30", salon:"Aula 301", estado:"pendiente", notas:"", color:"#0ea5e9" },
+  { id:"DESCANSO1", grupo:"DESCANSO", integrantes:"", propuesta:"Receso entre bloques", materia:"", profesor:"", fecha:"2025-06-10", hora_inicio:"09:30", hora_fin:"09:45", salon:"", estado:"descanso", notas:"", color:"" },
+  { id:"4", grupo:"DataSmart", integrantes:"Elena Vargas, Miguel Castro, Daniela Morales", propuesta:"Dashboard de Analítica para PYMES", materia:"Proyecto Final", profesor:"Dra. López", fecha:"2025-06-10", hora_inicio:"09:45", hora_fin:"10:15", salon:"Aula 301", estado:"finalizado", notas:"Excelente presentación", color:"#10b981" },
+  { id:"5", grupo:"CloudBuilders", integrantes:"Andrés Medina, Valentina Cruz, Nicolás Reyes", propuesta:"Sistema de Monitoreo IoT para Campus", materia:"Seminario de Investigación", profesor:"Dr. Ramírez", fecha:"2025-06-11", hora_inicio:"10:00", hora_fin:"10:30", salon:"Laboratorio A", estado:"cancelado", notas:"Reprogramado para próxima semana", color:"#ef4444" },
+  { id:"6", grupo:"GreenCode", integrantes:"Isabella Flores, Santiago Ruiz, Camila Jiménez", propuesta:"Gestión Sostenible de Recursos Hídricos", materia:"Seminario", profesor:"Dra. López", fecha:"2025-06-11", hora_inicio:"10:30", hora_fin:"11:00", salon:"Laboratorio A", estado:"proximo", notas:"", color:"#8b5cf6" },
   { id:"7", grupo:"ByteForce", integrantes:"Marcos Delgado, Laura Vega, Diego Castillo", propuesta:"Red Neuronal para Detección de Plagas", materia:"IA Aplicada", profesor:"Dr. Ramírez", fecha:"2025-06-11", hora_inicio:"11:00", hora_fin:"11:30", salon:"Laboratorio A", estado:"en_discusion", notas:"Muy buena propuesta", color:"#f59e0b" },
-  { id:"DESCANSO2", grupo:"DESCANSO", integrantes:"", propuesta:"Almuerzo", materia:"", profesor:"", fecha:"2025-06-11", hora_inicio:"11:30", hora_fin:"13:00", salon:"", estado:"descanso", notas:"", color:"#94a3b8" },
+  { id:"DESCANSO2", grupo:"DESCANSO", integrantes:"", propuesta:"Almuerzo", materia:"", profesor:"", fecha:"2025-06-11", hora_inicio:"11:30", hora_fin:"13:00", salon:"", estado:"descanso", notas:"", color:"" },
   { id:"8", grupo:"PixelCraft", integrantes:"Natalia Moreno, Hernán López, Paola Suárez", propuesta:"Plataforma de Portafolios Digitales", materia:"IA Aplicada", profesor:"Dra. López", fecha:"2025-06-11", hora_inicio:"13:00", hora_fin:"13:30", salon:"Laboratorio A", estado:"proximo", notas:"Traer demo funcional", color:"#ec4899" },
 ];
 
 const ESTADOS = {
-  proximo:      { label:"Próximo",      color:"#6366f1", bg:"#eef2ff", dot:"#6366f1", glow:"rgba(99,102,241,.25)" },
-  en_discusion: { label:"En Discusión", color:"#f59e0b", bg:"#fefce8", dot:"#f59e0b", glow:"rgba(245,158,11,.25)" },
-  pendiente:    { label:"Pendiente",    color:"#94a3b8", bg:"#f8fafc", dot:"#cbd5e1", glow:"rgba(148,163,184,.15)" },
-  cancelado:    { label:"Cancelado",    color:"#ef4444", bg:"#fff1f2", dot:"#ef4444", glow:"rgba(239,68,68,.2)" },
-  finalizado:   { label:"Finalizado",   color:"#10b981", bg:"#ecfdf5", dot:"#10b981", glow:"rgba(16,185,129,.2)" },
-  descanso:     { label:"Descanso",     color:"#94a3b8", bg:"#f8fafc", dot:"#e2e8f0", glow:"" },
+  proximo:      { label:"Próximo",      color:"#fff", bg:"#6366f1", icon:"🔵" },
+  en_discusion: { label:"En Discusión", color:"#fff", bg:"#f59e0b", icon:"🟡" },
+  pendiente:    { label:"Pendiente",    color:"#64748b", bg:"#e2e8f0", icon:"⚪" },
+  cancelado:    { label:"Cancelado",    color:"#fff", bg:"#ef4444", icon:"🔴" },
+  finalizado:   { label:"Finalizado",   color:"#fff", bg:"#10b981", icon:"🟢" },
+  descanso:     { label:"Descanso",     color:"#94a3b8", bg:"#f1f5f9", icon:"☕" },
 };
 
-const PALETA = ["#6366f1","#0ea5e9","#10b981","#f59e0b","#ef4444","#a855f7","#22c55e","#f97316","#ec4899","#14b8a6"];
+const PALETA = ["#6366f1","#f43f5e","#0ea5e9","#f59e0b","#10b981","#8b5cf6","#ec4899","#f97316","#14b8a6","#ef4444"];
 
 function parseRow(row, i) {
   return {
@@ -48,207 +48,30 @@ function parseRow(row, i) {
 
 function formatDate(d) {
   if (!d) return "";
-  try {
-    return new Date(d + "T00:00:00").toLocaleDateString("es-VE", {
-      weekday: "long", day: "numeric", month: "long",
-    });
-  } catch { return d; }
+  try { return new Date(d+"T00:00:00").toLocaleDateString("es-VE",{weekday:"long",day:"numeric",month:"long"}); }
+  catch { return d; }
+}
+
+function formatDateShort(d) {
+  if (!d) return "";
+  try { return new Date(d+"T00:00:00").toLocaleDateString("es-VE",{weekday:"short",day:"numeric",month:"short"}); }
+  catch { return d; }
 }
 
 function groupByDate(evs) {
   const g = {};
-  evs.forEach(e => {
-    const k = e.fecha || "Sin fecha";
-    if (!g[k]) g[k] = [];
-    g[k].push(e);
-  });
+  evs.forEach(e => { const k = e.fecha||"Sin fecha"; if(!g[k]) g[k]=[]; g[k].push(e); });
   return Object.entries(g).sort(([a],[b]) => a.localeCompare(b));
 }
 
 function initials(name) {
-  return name.trim().split(" ").map(w => w[0]).slice(0,2).join("").toUpperCase();
-}
-
-function Badge({ estado, size = "sm" }) {
-  const c = ESTADOS[estado] || ESTADOS.pendiente;
-  const fs = size === "lg" ? 11 : 9.5;
-  const pad = size === "lg" ? "5px 12px" : "3px 9px";
-  return (
-    <span style={{
-      display: "inline-flex", alignItems: "center", gap: 5,
-      background: c.bg, color: c.color, fontSize: fs, fontWeight: 800,
-      padding: pad, borderRadius: 99, border: `1.5px solid ${c.color}28`,
-      letterSpacing: .2, flexShrink: 0,
-    }}>
-      <span style={{ width: size==="lg"?7:5.5, height: size==="lg"?7:5.5,
-        borderRadius: "50%", background: c.dot, display: "inline-block",
-        boxShadow: `0 0 6px ${c.dot}` }} />
-      {c.label}
-    </span>
-  );
-}
-
-function Avatars({ integrantes, color, id }) {
-  if (!integrantes) return null;
-  const members = integrantes.split(",").map(s => s.trim()).filter(Boolean);
-  return (
-    <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-      <div style={{ display: "flex" }}>
-        {members.slice(0, 4).map((n, i) => (
-          <div key={i} title={n} style={{
-            width: 26, height: 26, borderRadius: "50%",
-            border: "2px solid #fff",
-            marginLeft: i > 0 ? -8 : 0, flexShrink: 0, zIndex: 4-i,
-            background: `hsl(${(i*79 + parseInt(id||0)*41) % 360},55%,60%)`,
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 8.5, fontWeight: 900, color: "#fff",
-            boxShadow: "0 1px 4px rgba(0,0,0,.15)",
-          }}>{initials(n)}</div>
-        ))}
-        {members.length > 4 && (
-          <div style={{ width: 26, height: 26, borderRadius: "50%",
-            border: "2px solid #fff", marginLeft: -8, background: "#e2e8f0",
-            display: "flex", alignItems: "center", justifyContent: "center",
-            fontSize: 8, fontWeight: 900, color: "#94a3b8" }}>
-            +{members.length - 4}
-          </div>
-        )}
-      </div>
-      <span style={{ fontSize: 10, color: "#94a3b8", fontWeight: 600 }}>
-        {members.length} integrante{members.length !== 1 ? "s" : ""}
-      </span>
-    </div>
-  );
-}
-
-// ── CARD PRINCIPAL ──────────────────────────────────────────────
-function Card({ ev, onClick, idx }) {
-  const [hov, setHov] = useState(false);
-  const isBreak = ev.estado === "descanso";
-  const cfg = ESTADOS[ev.estado] || ESTADOS.pendiente;
-
-  if (isBreak) return (
-    <div style={{
-      display: "flex", alignItems: "center", gap: 14,
-      background: "linear-gradient(135deg,#f8fafc,#f1f5f9)",
-      border: "2px dashed #cbd5e1", borderRadius: 18,
-      padding: "13px 18px", marginBottom: 14,
-      animation: `fadeUp .35s ease ${Math.min(idx*50,350)}ms both`,
-    }}>
-      <div style={{ width: 40, height: 40, borderRadius: 12, background: "#e2e8f0",
-        display: "flex", alignItems: "center", justifyContent: "center", fontSize: 20, flexShrink: 0 }}>
-        ☕
-      </div>
-      <div>
-        <p style={{ fontSize: 12, fontWeight: 800, color: "#64748b", margin: "0 0 2px" }}>
-          {ev.hora_inicio}{ev.hora_fin && ` – ${ev.hora_fin}`} · Receso
-        </p>
-        {ev.propuesta && <p style={{ fontSize: 11, color: "#94a3b8", margin: 0 }}>{ev.propuesta}</p>}
-      </div>
-    </div>
-  );
-
-  return (
-    <div
-      onClick={onClick}
-      onMouseEnter={() => setHov(true)}
-      onMouseLeave={() => setHov(false)}
-      style={{
-        background: "#fff",
-        borderRadius: 22,
-        border: `1.5px solid ${hov ? ev.color+"44" : "#eaecf5"}`,
-        cursor: "pointer",
-        overflow: "hidden",
-        marginBottom: 16,
-        breakInside: "avoid",
-        transition: "transform .2s ease, box-shadow .2s ease, border-color .2s ease",
-        transform: hov ? "translateY(-4px)" : "translateY(0)",
-        boxShadow: hov
-          ? `0 20px 60px ${ev.color}22, 0 4px 16px rgba(0,0,0,.08)`
-          : "0 2px 12px rgba(0,0,0,.05)",
-        animation: `fadeUp .4s ease ${Math.min(idx*55,450)}ms both`,
-      }}
-    >
-      {/* Top accent bar */}
-      <div style={{
-        height: 5,
-        background: `linear-gradient(90deg, ${ev.color}, ${ev.color}66)`,
-      }} />
-
-      {/* Color wash header */}
-      <div style={{
-        background: `linear-gradient(180deg, ${ev.color}0f 0%, transparent 100%)`,
-        padding: "14px 16px 0",
-      }}>
-        {/* Hora + Badge */}
-        <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 10 }}>
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 5,
-            background: `${ev.color}18`, color: ev.color,
-            fontSize: 11, fontWeight: 800,
-            padding: "4px 11px", borderRadius: 99,
-            border: `1px solid ${ev.color}22`,
-          }}>
-            <span style={{ fontSize: 12 }}>🕐</span>
-            {ev.hora_inicio}{ev.hora_fin && ` – ${ev.hora_fin}`}
-          </div>
-          <Badge estado={ev.estado} />
-        </div>
-
-        {/* Nombre grupo */}
-        <h3 style={{
-          fontSize: 15.5, fontWeight: 900, color: "#0f172a",
-          fontFamily: "'Sora', sans-serif", lineHeight: 1.3,
-          marginBottom: 5, letterSpacing: "-.3px",
-          overflow: "hidden", display: "-webkit-box",
-          WebkitLineClamp: 1, WebkitBoxOrient: "vertical",
-        }}>{ev.grupo}</h3>
-      </div>
-
-      <div style={{ padding: "8px 16px 14px" }}>
-        {/* Propuesta */}
-        <p style={{
-          fontSize: 12.5, color: "#64748b", lineHeight: 1.65,
-          marginBottom: 12, overflow: "hidden", display: "-webkit-box",
-          WebkitLineClamp: 2, WebkitBoxOrient: "vertical",
-        }}>{ev.propuesta}</p>
-
-        {/* Avatares */}
-        {ev.integrantes && (
-          <div style={{ marginBottom: 12 }}>
-            <Avatars integrantes={ev.integrantes} color={ev.color} id={ev.id} />
-          </div>
-        )}
-
-        {/* Footer tags */}
-        <div style={{
-          display: "flex", flexWrap: "wrap", gap: 5,
-          paddingTop: 10, borderTop: "1px solid #f1f5f9",
-        }}>
-          {ev.salon && (
-            <span style={{ fontSize: 10, color: "#475569", background: "#f8fafc",
-              padding: "3px 9px", borderRadius: 8, fontWeight: 600,
-              border: "1px solid #e2e8f0" }}>🏫 {ev.salon}</span>
-          )}
-          {ev.profesor && (
-            <span style={{ fontSize: 10, color: "#475569", background: "#f8fafc",
-              padding: "3px 9px", borderRadius: 8, fontWeight: 600,
-              border: "1px solid #e2e8f0" }}>👤 {ev.profesor}</span>
-          )}
-          {ev.materia && (
-            <span style={{ fontSize: 10, color: ev.color, fontWeight: 700,
-              background: `${ev.color}12`, padding: "3px 9px", borderRadius: 8,
-              border: `1px solid ${ev.color}22` }}>{ev.materia}</span>
-          )}
-        </div>
-      </div>
-    </div>
-  );
+  return name.trim().split(" ").map(w=>w[0]).slice(0,2).join("").toUpperCase();
 }
 
 // ── MODAL ────────────────────────────────────────────────────────
 function Modal({ ev, onClose }) {
-  const members = ev.integrantes ? ev.integrantes.split(",").map(s => s.trim()).filter(Boolean) : [];
+  const cfg = ESTADOS[ev.estado] || ESTADOS.pendiente;
+  const members = ev.integrantes ? ev.integrantes.split(",").map(s=>s.trim()).filter(Boolean) : [];
 
   useEffect(() => {
     document.body.style.overflow = "hidden";
@@ -256,150 +79,136 @@ function Modal({ ev, onClose }) {
   }, []);
 
   return (
-    <div style={{
-      position: "fixed", inset: 0, zIndex: 9999,
-      display: "flex", alignItems: "flex-end", justifyContent: "center",
-    }} onClick={onClose}>
+    <div onClick={onClose} style={{
+      position:"fixed", inset:0, zIndex:9999,
+      display:"flex", alignItems:"flex-end", justifyContent:"center",
+    }}>
       <div style={{
-        position: "absolute", inset: 0,
-        background: "rgba(2,6,23,.85)", backdropFilter: "blur(14px)",
-        animation: "fadeIn .2s ease",
-      }} />
-      <div onClick={e => e.stopPropagation()} style={{
-        position: "relative", background: "#fff",
-        borderRadius: "28px 28px 0 0",
-        width: "100%", maxWidth: 560, maxHeight: "93vh", overflowY: "auto",
-        boxShadow: `0 -40px 100px rgba(0,0,0,.4), 0 -4px 0 ${ev.color}`,
-        animation: "slideUp .32s cubic-bezier(.22,.68,0,1.1)",
+        position:"absolute", inset:0,
+        background:"rgba(0,0,0,.6)", backdropFilter:"blur(10px)",
+        animation:"fadeIn .2s ease",
+      }}/>
+      <div onClick={e=>e.stopPropagation()} style={{
+        position:"relative", width:"100%", maxWidth:520,
+        background:"#fff", borderRadius:"24px 24px 0 0",
+        maxHeight:"90vh", overflowY:"auto",
+        animation:"slideUp .3s cubic-bezier(.34,1.56,.64,1)",
+        boxShadow:"0 -20px 60px rgba(0,0,0,.25)",
       }}>
-        {/* Drag handle */}
-        <div style={{ padding: "14px 20px 0", display: "flex", justifyContent: "center" }}>
-          <div style={{ width: 44, height: 4, borderRadius: 99, background: "#e2e8f0" }} />
-        </div>
-
-        {/* Hero header */}
+        {/* Color header */}
         <div style={{
-          padding: "16px 20px 20px",
-          background: `linear-gradient(160deg, ${ev.color}18 0%, ${ev.color}06 100%)`,
-          margin: "8px 12px 0", borderRadius: 20,
-          border: `1.5px solid ${ev.color}20`,
+          background:`linear-gradient(135deg, ${ev.color}, ${ev.color}bb)`,
+          padding:"20px 20px 24px", borderRadius:"24px 24px 0 0",
+          position:"relative",
         }}>
-          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: 12 }}>
-            <Badge estado={ev.estado} size="lg" />
-            <button onClick={onClose} style={{
-              width: 32, height: 32, borderRadius: "50%",
-              border: "none", background: "rgba(0,0,0,.07)",
-              cursor: "pointer", fontSize: 14, fontWeight: 900,
-              color: "#64748b", display: "flex", alignItems: "center", justifyContent: "center",
-            }}>✕</button>
-          </div>
+          <button onClick={onClose} style={{
+            position:"absolute", top:16, right:16,
+            width:32, height:32, borderRadius:"50%",
+            border:"none", background:"rgba(255,255,255,.25)",
+            color:"#fff", fontSize:16, cursor:"pointer",
+            display:"flex", alignItems:"center", justifyContent:"center",
+            fontWeight:900, backdropFilter:"blur(4px)",
+          }}>×</button>
 
-          <div style={{
-            display: "inline-flex", alignItems: "center", gap: 6,
-            background: ev.color, color: "#fff", fontSize: 11.5, fontWeight: 800,
-            padding: "6px 14px", borderRadius: 99, marginBottom: 10,
-            boxShadow: `0 4px 14px ${ev.color}55`,
-          }}>
-            🕐 {ev.hora_inicio}{ev.hora_fin && ` – ${ev.hora_fin}`}
-            {ev.fecha && ` · ${formatDate(ev.fecha)}`}
-          </div>
+          <span style={{
+            display:"inline-block", background:"rgba(255,255,255,.25)",
+            color:"#fff", fontSize:10, fontWeight:800,
+            padding:"3px 10px", borderRadius:99, marginBottom:10,
+            backdropFilter:"blur(4px)",
+          }}>{cfg.label.toUpperCase()}</span>
 
           <h2 style={{
-            fontSize: 22, fontWeight: 900, color: "#0f172a",
-            fontFamily: "'Sora', sans-serif", lineHeight: 1.25,
-            marginBottom: 6, letterSpacing: "-.4px",
+            color:"#fff", fontSize:22, fontWeight:900,
+            fontFamily:"'Plus Jakarta Sans',sans-serif",
+            lineHeight:1.2, marginBottom:6,
+            textShadow:"0 2px 8px rgba(0,0,0,.15)",
           }}>{ev.grupo}</h2>
 
           <p style={{
-            fontSize: 13.5, color: "#475569", lineHeight: 1.7,
-            fontStyle: "italic", margin: 0,
+            color:"rgba(255,255,255,.85)", fontSize:13,
+            lineHeight:1.6, fontStyle:"italic",
           }}>"{ev.propuesta}"</p>
+
+          {/* Hora pill */}
+          <div style={{
+            display:"inline-flex", alignItems:"center", gap:6,
+            background:"rgba(0,0,0,.2)", color:"#fff",
+            fontSize:12, fontWeight:800,
+            padding:"6px 14px", borderRadius:99, marginTop:12,
+            backdropFilter:"blur(4px)",
+          }}>
+            🕐 {ev.hora_inicio}{ev.hora_fin && ` — ${ev.hora_fin}`}
+            {ev.fecha && ` · ${formatDateShort(ev.fecha)}`}
+          </div>
         </div>
 
-        <div style={{ padding: "16px 20px 44px" }}>
-          {/* Info grid */}
-          <div style={{
-            display: "grid", gridTemplateColumns: "1fr 1fr",
-            gap: 8, marginBottom: 16,
-          }}>
+        <div style={{ padding:"20px 20px 40px", display:"flex", flexDirection:"column", gap:12 }}>
+          {/* Info pills */}
+          <div style={{ display:"flex", flexWrap:"wrap", gap:8 }}>
             {[
-              ev.salon    && { icon:"🏫", label:"Salón",      val: ev.salon },
-              ev.profesor && { icon:"👤", label:"Profesor(a)", val: ev.profesor },
-              ev.materia  && { icon:"📚", label:"Materia",    val: ev.materia },
-              ev.fecha    && { icon:"📅", label:"Fecha",      val: formatDate(ev.fecha) },
-            ].filter(Boolean).map(({ icon, label, val }) => (
-              <div key={label} style={{
-                background: "#f8fafc", borderRadius: 14, padding: "11px 13px",
-                border: "1.5px solid #f1f5f9",
-              }}>
-                <p style={{ fontSize: 9, color: "#94a3b8", fontWeight: 800,
-                  textTransform: "uppercase", letterSpacing: .9, margin: "0 0 4px" }}>
-                  {icon} {label}
-                </p>
-                <p style={{ fontSize: 13, color: "#1e293b", fontWeight: 700, margin: 0, lineHeight: 1.3 }}>
-                  {val}
-                </p>
-              </div>
+              ev.salon    && { icon:"🏫", val:ev.salon },
+              ev.profesor && { icon:"👤", val:ev.profesor },
+              ev.materia  && { icon:"📚", val:ev.materia },
+            ].filter(Boolean).map(({icon,val}) => (
+              <span key={val} style={{
+                display:"inline-flex", alignItems:"center", gap:5,
+                background:"#f8fafc", border:"1.5px solid #e2e8f0",
+                borderRadius:99, padding:"6px 13px",
+                fontSize:12, fontWeight:700, color:"#334155",
+              }}>{icon} {val}</span>
             ))}
           </div>
 
           {/* Integrantes */}
           {members.length > 0 && (
-            <div style={{ marginBottom: 16 }}>
+            <div style={{
+              background:"#f8fafc", borderRadius:16,
+              border:"1.5px solid #e2e8f0", overflow:"hidden",
+            }}>
               <p style={{
-                fontSize: 10, fontWeight: 800, color: "#94a3b8",
-                textTransform: "uppercase", letterSpacing: .9, marginBottom: 10,
-              }}>
-                👥 Integrantes del grupo
-              </p>
-              <div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
-                {members.map((n, i) => (
-                  <div key={i} style={{
-                    display: "flex", alignItems: "center", gap: 11,
-                    padding: "9px 13px", background: "#f8fafc", borderRadius: 13,
-                    border: "1.5px solid #f1f5f9",
-                  }}>
-                    <div style={{
-                      width: 34, height: 34, borderRadius: "50%", flexShrink: 0,
-                      background: `hsl(${(i*79+parseInt(ev.id||0)*41)%360},55%,60%)`,
-                      display: "flex", alignItems: "center", justifyContent: "center",
-                      fontSize: 12, fontWeight: 900, color: "#fff",
-                    }}>{initials(n)}</div>
-                    <span style={{ fontSize: 13.5, fontWeight: 600, color: "#334155" }}>{n}</span>
-                  </div>
-                ))}
-              </div>
+                fontSize:10, fontWeight:800, color:"#94a3b8",
+                textTransform:"uppercase", letterSpacing:1,
+                padding:"11px 14px 8px",
+              }}>👥 Integrantes</p>
+              {members.map((n,i) => (
+                <div key={i} style={{
+                  display:"flex", alignItems:"center", gap:10,
+                  padding:"9px 14px",
+                  borderTop: i>0 ? "1px solid #f1f5f9" : "none",
+                }}>
+                  <div style={{
+                    width:32, height:32, borderRadius:"50%", flexShrink:0,
+                    background:`hsl(${(i*97+parseInt(ev.id||0)*43)%360},55%,62%)`,
+                    display:"flex", alignItems:"center", justifyContent:"center",
+                    fontSize:11, fontWeight:900, color:"#fff",
+                  }}>{initials(n)}</div>
+                  <span style={{ fontSize:13.5, fontWeight:600, color:"#1e293b" }}>{n}</span>
+                </div>
+              ))}
             </div>
           )}
 
           {/* Notas */}
           {ev.notas && (
             <div style={{
-              background: "linear-gradient(135deg,#fffbeb,#fef9c3)",
-              border: "1.5px solid #fde68a", borderRadius: 16,
-              padding: "14px 15px", marginBottom: 16,
+              background:"#fffbeb", border:"1.5px solid #fde68a",
+              borderRadius:14, padding:"13px 14px",
             }}>
-              <p style={{ fontSize: 9.5, fontWeight: 800, color: "#92400e",
-                textTransform: "uppercase", letterSpacing: .8, margin: "0 0 6px" }}>
-                📝 Notas del Profesor
+              <p style={{ fontSize:9.5, fontWeight:800, color:"#92400e",
+                textTransform:"uppercase", letterSpacing:.8, marginBottom:5 }}>
+                📝 Notas del profesor
               </p>
-              <p style={{ fontSize: 13.5, color: "#78350f", lineHeight: 1.7, margin: 0 }}>
-                {ev.notas}
-              </p>
+              <p style={{ fontSize:13, color:"#78350f", lineHeight:1.7, margin:0 }}>{ev.notas}</p>
             </div>
           )}
 
           <button onClick={onClose} style={{
-            width: "100%", padding: "15px",
-            background: `linear-gradient(135deg, ${ev.color}, ${ev.color}bb)`,
-            color: "#fff", border: "none", borderRadius: 16,
-            fontSize: 14, fontWeight: 800, cursor: "pointer",
-            fontFamily: "inherit", letterSpacing: .3,
-            boxShadow: `0 6px 20px ${ev.color}44`,
-            transition: "opacity .15s",
-          }}>
-            Cerrar
-          </button>
+            padding:"14px", borderRadius:14,
+            background:`linear-gradient(135deg,${ev.color},${ev.color}cc)`,
+            color:"#fff", border:"none", fontSize:14, fontWeight:800,
+            cursor:"pointer", fontFamily:"inherit",
+            boxShadow:`0 4px 16px ${ev.color}55`,
+          }}>Cerrar</button>
         </div>
       </div>
     </div>
@@ -410,22 +219,22 @@ function Modal({ ev, onClose }) {
 //  APP
 // ══════════════════════════════════════════════════════
 export default function App() {
-  const [events, setEvents]               = useState([]);
-  const [loading, setLoading]             = useState(true);
-  const [usingDemo, setUsingDemo]         = useState(false);
-  const [selected, setSelected]           = useState(null);
-  const [filtroEstado, setFiltroEstado]   = useState("todos");
-  const [filtroFecha, setFiltroFecha]     = useState("todas");
-  const [busqueda, setBusqueda]           = useState("");
+  const [events, setEvents]             = useState([]);
+  const [loading, setLoading]           = useState(true);
+  const [usingDemo, setUsingDemo]       = useState(false);
+  const [selected, setSelected]         = useState(null);
+  const [filtroEstado, setFiltroEstado] = useState("todos");
+  const [filtroFecha, setFiltroFecha]   = useState("todas");
+  const [busqueda, setBusqueda]         = useState("");
 
   const loadData = url => {
     setLoading(true);
     if (!url || url.includes("TU_URL")) {
-      setTimeout(() => { setEvents(DEMO_DATA.map(parseRow)); setUsingDemo(true); setLoading(false); }, 550);
+      setTimeout(() => { setEvents(DEMO_DATA.map(parseRow)); setUsingDemo(true); setLoading(false); }, 500);
       return;
     }
     Papa.parse(url, {
-      download: true, header: true, skipEmptyLines: true,
+      download:true, header:true, skipEmptyLines:true,
       complete: r => {
         if (r.data?.length > 0) { setEvents(r.data.map(parseRow)); setUsingDemo(false); }
         else { setEvents(DEMO_DATA.map(parseRow)); setUsingDemo(true); }
@@ -437,7 +246,8 @@ export default function App() {
 
   useEffect(() => { loadData(GOOGLE_SHEET_CSV_URL); }, []);
 
-  const fechas = ["todas", ...Array.from(new Set(events.map(e => e.fecha).filter(Boolean))).sort()];
+  const fechas = ["todas", ...Array.from(new Set(events.map(e=>e.fecha).filter(Boolean))).sort()];
+  const real   = events.filter(e => e.estado !== "descanso");
 
   const filtered = events.filter(ev => {
     if (ev.estado === "descanso") return filtroFecha === "todas" || ev.fecha === filtroFecha;
@@ -453,305 +263,389 @@ export default function App() {
   });
 
   const grouped = groupByDate(filtered);
-  const real = events.filter(e => e.estado !== "descanso");
   const stats = {
     total:        real.length,
-    proximos:     real.filter(e => e.estado === "proximo").length,
-    en_discusion: real.filter(e => e.estado === "en_discusion").length,
-    finalizados:  real.filter(e => e.estado === "finalizado").length,
+    proximos:     real.filter(e=>e.estado==="proximo").length,
+    en_discusion: real.filter(e=>e.estado==="en_discusion").length,
+    finalizados:  real.filter(e=>e.estado==="finalizado").length,
   };
 
   const FILTROS = [
-    { id:"todos",        label:"Todos" },
-    { id:"proximo",      label:"Próximos" },
-    { id:"en_discusion", label:"En Discusión" },
-    { id:"pendiente",    label:"Pendientes" },
-    { id:"finalizado",   label:"Finalizados" },
-    { id:"cancelado",    label:"Cancelados" },
+    { id:"todos",        label:"Todos",        dot:null },
+    { id:"proximo",      label:"Próximos",     dot:"#6366f1" },
+    { id:"en_discusion", label:"En Discusión", dot:"#f59e0b" },
+    { id:"pendiente",    label:"Pendientes",   dot:"#94a3b8" },
+    { id:"finalizado",   label:"Finalizados",  dot:"#10b981" },
+    { id:"cancelado",    label:"Cancelados",   dot:"#ef4444" },
   ];
 
   return (
-    <div style={{
-      minHeight: "100vh", width: "100%",
-      background: "linear-gradient(180deg,#f0f4ff 0%,#fafbff 400px)",
-      fontFamily: "'DM Sans', system-ui, sans-serif",
-      overflowX: "hidden",
-    }}>
+    <div style={{ minHeight:"100vh", background:"#f8fafc",
+      fontFamily:"'DM Sans',system-ui,sans-serif", overflowX:"hidden" }}>
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Sora:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800;9..40,900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800;900&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700;9..40,800&display=swap');
         *{box-sizing:border-box;margin:0;padding:0;}
         body{overflow-x:hidden;}
-        ::-webkit-scrollbar{width:4px;}
-        ::-webkit-scrollbar-track{background:transparent;}
-        ::-webkit-scrollbar-thumb{background:#c7d2fe;border-radius:99px;}
-
+        ::-webkit-scrollbar{width:0;}
         @keyframes fadeIn{from{opacity:0}to{opacity:1}}
-        @keyframes slideUp{from{transform:translateY(50px);opacity:0}to{transform:translateY(0);opacity:1}}
-        @keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+        @keyframes slideUp{from{transform:translateY(60px);opacity:0}to{transform:translateY(0);opacity:1}}
+        @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
         @keyframes spin{to{transform:rotate(360deg)}}
-        @keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-        @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-6px)}}
-
-        .chip{
-          display:inline-flex;align-items:center;gap:5px;
-          padding:7px 15px;border-radius:99px;
-          border:1.5px solid transparent;
-          white-space:nowrap;font-weight:700;
-          cursor:pointer;font-size:12px;
-          transition:all .15s;flex-shrink:0;
-          font-family:inherit;
-        }
-        .chip:hover{transform:scale(1.05);}
-        .chip:active{transform:scale(.97);}
-
-        .masonry{
-          columns:1;column-gap:14px;
-        }
-        @media(min-width:500px){.masonry{columns:2;}}
-        @media(min-width:800px){.masonry{columns:3;}}
-        @media(min-width:1100px){.masonry{columns:4;}}
-
-        .search:focus{
-          border-color:#6366f1!important;
-          box-shadow:0 0 0 4px rgba(99,102,241,.13)!important;
-          outline:none;
-        }
-
-        .stat-card{
-          background:rgba(255,255,255,.12);
-          border:1px solid rgba(255,255,255,.2);
-          border-radius:16px;
-          padding:10px 16px;
-          text-align:center;
-          flex-shrink:0;
-          backdrop-filter:blur(8px);
-          transition:transform .15s,background .15s;
-        }
-        .stat-card:hover{
-          background:rgba(255,255,255,.18);
-          transform:translateY(-2px);
-        }
+        .row:active{transform:scale(.985);}
+        .fchip:hover{opacity:.85;}
+        .fchip:active{transform:scale(.95);}
       `}</style>
 
-      {/* ══════════════ HEADER ══════════════ */}
-      <header style={{
-        background: "linear-gradient(155deg,#0f0c29 0%,#1e1b4b 35%,#302b63 65%,#24243e 100%)",
-        padding: "20px 20px 0",
-        position: "sticky", top: 0, zIndex: 100,
-        boxShadow: "0 8px 40px rgba(15,12,41,.5)",
+      {/* ══ HEADER ══ */}
+      <div style={{
+        background:"linear-gradient(135deg,#0f172a 0%,#1e293b 100%)",
+        padding:"22px 18px 18px",
+        position:"sticky", top:0, zIndex:50,
       }}>
-        {/* Decorative blobs */}
-        <div style={{ position:"absolute", top:-60, right:-60, width:220, height:220,
-          borderRadius:"50%", background:"radial-gradient(circle,rgba(99,102,241,.25),transparent 70%)",
-          pointerEvents:"none" }} />
-        <div style={{ position:"absolute", top:20, left:"40%", width:160, height:160,
-          borderRadius:"50%", background:"radial-gradient(circle,rgba(139,92,246,.18),transparent 70%)",
-          pointerEvents:"none" }} />
-
-        {/* Logo row */}
-        <div style={{ display:"flex", alignItems:"center", gap:12, marginBottom:16, position:"relative" }}>
+        {/* Logo */}
+        <div style={{ display:"flex", alignItems:"center", gap:10, marginBottom:18 }}>
           <div style={{
-            width:42, height:42, borderRadius:14,
-            background:"linear-gradient(135deg,#818cf8,#6366f1)",
+            width:40, height:40, borderRadius:12, flexShrink:0,
+            background:"linear-gradient(135deg,#6366f1,#8b5cf6)",
             display:"flex", alignItems:"center", justifyContent:"center",
-            fontSize:22, boxShadow:"0 4px 16px rgba(99,102,241,.55)",
-            animation:"float 3s ease-in-out infinite",
+            fontSize:20, boxShadow:"0 4px 12px rgba(99,102,241,.5)",
           }}>🎓</div>
-          <div>
-            <p style={{ fontSize:9.5, color:"rgba(255,255,255,.4)",
-              letterSpacing:2, textTransform:"uppercase", marginBottom:1, fontWeight:700 }}>
-              Universidad · Sistema de Turnos
+          <div style={{ flex:1 }}>
+            <p style={{ fontSize:9, color:"rgba(255,255,255,.4)",
+              letterSpacing:2, textTransform:"uppercase", fontWeight:700, marginBottom:1 }}>
+              Sistema de Turnos
             </p>
             <div style={{ display:"flex", alignItems:"center", gap:8 }}>
-              <h1 style={{ color:"#fff", fontSize:28, fontWeight:900,
-                fontFamily:"'Sora',sans-serif", letterSpacing:"-1px", lineHeight:1 }}>
+              <h1 style={{ color:"#fff", fontSize:24, fontWeight:900,
+                fontFamily:"'Plus Jakarta Sans',sans-serif", letterSpacing:"-.5px" }}>
                 PanaTurno
               </h1>
               {usingDemo && (
-                <span style={{ background:"linear-gradient(135deg,#fbbf24,#f59e0b)",
-                  color:"#78350f", fontSize:8.5, fontWeight:900,
-                  padding:"2px 8px", borderRadius:99, letterSpacing:.6,
-                  boxShadow:"0 2px 8px rgba(245,158,11,.4)" }}>DEMO</span>
+                <span style={{ background:"#fbbf24", color:"#78350f",
+                  fontSize:8, fontWeight:900, padding:"2px 7px",
+                  borderRadius:99, letterSpacing:.5 }}>DEMO</span>
               )}
             </div>
           </div>
-        </div>
-
-        {/* Stats */}
-        <div style={{ display:"flex", gap:8, marginBottom:14,
-          overflowX:"auto", scrollbarWidth:"none", paddingBottom:2 }}>
-          {[
-            { v:stats.total,        icon:"👥", label:"grupos" },
-            { v:stats.proximos,     icon:"🔵", label:"próximos",     accent:"rgba(99,102,241,.4)" },
-            { v:stats.en_discusion, icon:"🟡", label:"discusión",    accent:"rgba(245,158,11,.35)" },
-            { v:stats.finalizados,  icon:"🟢", label:"finalizados",  accent:"rgba(16,185,129,.35)" },
-          ].map(s => (
-            <div key={s.label} className="stat-card"
-              style={{ background: s.accent || "rgba(255,255,255,.1)" }}>
-              <p style={{ fontSize:20, fontWeight:900, color:"#fff",
-                fontFamily:"'Sora',sans-serif", lineHeight:1, margin:"0 0 2px" }}>{s.v}</p>
-              <p style={{ fontSize:9, color:"rgba(255,255,255,.6)",
-                fontWeight:700, margin:0, whiteSpace:"nowrap" }}>
-                {s.icon} {s.label}
-              </p>
-            </div>
-          ))}
+          {/* Stats inline */}
+          <div style={{ display:"flex", gap:6 }}>
+            {[
+              { v:stats.proximos,     bg:"#6366f1" },
+              { v:stats.en_discusion, bg:"#f59e0b" },
+              { v:stats.finalizados,  bg:"#10b981" },
+            ].map((s,i) => (
+              <div key={i} style={{
+                width:34, height:34, borderRadius:10,
+                background:s.bg, display:"flex", alignItems:"center",
+                justifyContent:"center", flexShrink:0,
+                boxShadow:`0 4px 10px ${s.bg}55`,
+              }}>
+                <span style={{ color:"#fff", fontSize:14, fontWeight:900,
+                  fontFamily:"'Plus Jakarta Sans',sans-serif" }}>{s.v}</span>
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Search */}
-        <div style={{ position:"relative", marginBottom:10 }}>
-          <span style={{ position:"absolute", left:14, top:"50%",
-            transform:"translateY(-50%)", fontSize:15, opacity:.45, pointerEvents:"none" }}>🔍</span>
-          <input className="search" type="text"
-            placeholder="Buscar grupo, propuesta, integrante…"
-            value={busqueda} onChange={e => setBusqueda(e.target.value)}
-            style={{ width:"100%", padding:"12px 40px 12px 42px",
-              borderRadius:15, border:"2px solid rgba(255,255,255,.12)",
-              fontSize:13.5, color:"#0f172a", background:"rgba(255,255,255,.97)",
-              fontFamily:"inherit", fontWeight:500, transition:"all .2s",
-              boxSizing:"border-box" }} />
+        <div style={{ position:"relative", marginBottom:12 }}>
+          <span style={{ position:"absolute", left:13, top:"50%",
+            transform:"translateY(-50%)", fontSize:14, opacity:.4, pointerEvents:"none" }}>🔍</span>
+          <input type="text"
+            placeholder="Buscar grupo, integrante, propuesta…"
+            value={busqueda} onChange={e=>setBusqueda(e.target.value)}
+            style={{ width:"100%", padding:"11px 36px 11px 38px",
+              borderRadius:12, border:"none",
+              fontSize:13, color:"#0f172a", background:"rgba(255,255,255,.95)",
+              fontFamily:"inherit", fontWeight:500, outline:"none",
+              boxSizing:"border-box",
+              boxShadow:"0 2px 8px rgba(0,0,0,.2)" }} />
           {busqueda && (
-            <button onClick={() => setBusqueda("")} style={{
-              position:"absolute", right:12, top:"50%", transform:"translateY(-50%)",
+            <button onClick={()=>setBusqueda("")} style={{
+              position:"absolute", right:10, top:"50%", transform:"translateY(-50%)",
               border:"none", background:"#e2e8f0", cursor:"pointer",
-              borderRadius:"50%", width:24, height:24,
+              borderRadius:"50%", width:22, height:22,
               display:"flex", alignItems:"center", justifyContent:"center",
               fontSize:11, color:"#64748b", fontWeight:900,
             }}>✕</button>
           )}
         </div>
 
-        {/* Fechas */}
+        {/* Filtros fecha */}
         {fechas.length > 2 && (
           <div style={{ display:"flex", gap:6, overflowX:"auto",
-            scrollbarWidth:"none", marginBottom:6, paddingBottom:2 }}>
-            {fechas.map(f => (
-              <button key={f} className="chip" onClick={() => setFiltroFecha(f)}
-                style={{
-                  background: filtroFecha===f ? "rgba(255,255,255,.2)" : "transparent",
-                  color: filtroFecha===f ? "#fff" : "rgba(255,255,255,.6)",
-                  border: `1.5px solid ${filtroFecha===f ? "rgba(255,255,255,.4)" : "rgba(255,255,255,.15)"}`,
-                }}>
-                📅 {f==="todas" ? "Todas" : new Date(f+"T00:00:00").toLocaleDateString("es-VE",{day:"numeric",month:"short"})}
-              </button>
-            ))}
+            scrollbarWidth:"none", marginBottom:8 }}>
+            {fechas.map(f => {
+              const active = filtroFecha === f;
+              return (
+                <button key={f} className="fchip" onClick={()=>setFiltroFecha(f)}
+                  style={{
+                    padding:"5px 12px", borderRadius:99, border:"none",
+                    fontSize:11, fontWeight:700, cursor:"pointer",
+                    flexShrink:0, fontFamily:"inherit", transition:"all .15s",
+                    background: active ? "#fff" : "rgba(255,255,255,.12)",
+                    color: active ? "#0f172a" : "rgba(255,255,255,.65)",
+                  }}>
+                  {f==="todas" ? "📅 Todas" : `📅 ${new Date(f+"T00:00:00").toLocaleDateString("es-VE",{day:"numeric",month:"short"})}`}
+                </button>
+              );
+            })}
           </div>
         )}
 
-        {/* Estado filters */}
-        <div style={{ display:"flex", gap:6, overflowX:"auto",
-          scrollbarWidth:"none", paddingBottom:16 }}>
+        {/* Filtros estado — chips de colores */}
+        <div style={{ display:"flex", gap:6, overflowX:"auto", scrollbarWidth:"none" }}>
           {FILTROS.map(f => {
-            const cfg = ESTADOS[f.id];
             const active = filtroEstado === f.id;
+            const cfg = ESTADOS[f.id];
             return (
-              <button key={f.id} className="chip" onClick={() => setFiltroEstado(f.id)}
+              <button key={f.id} className="fchip" onClick={()=>setFiltroEstado(f.id)}
                 style={{
-                  background: active ? "#fff" : "rgba(255,255,255,.1)",
-                  color: active ? (cfg?.color || "#0f172a") : "rgba(255,255,255,.78)",
-                  border: `1.5px solid ${active ? "transparent" : "rgba(255,255,255,.15)"}`,
-                  boxShadow: active ? "0 3px 14px rgba(0,0,0,.25)" : "none",
+                  padding:"5px 12px", borderRadius:99, border:"none",
+                  fontSize:11, fontWeight:800, cursor:"pointer",
+                  flexShrink:0, fontFamily:"inherit", transition:"all .15s",
+                  background: active
+                    ? (cfg ? cfg.bg : "#fff")
+                    : "rgba(255,255,255,.12)",
+                  color: active
+                    ? (cfg ? cfg.color : "#0f172a")
+                    : "rgba(255,255,255,.65)",
+                  boxShadow: active ? `0 2px 8px ${cfg?.bg || "#fff"}44` : "none",
                 }}>
-                {f.id !== "todos" && (
-                  <span style={{ width:6, height:6, borderRadius:"50%",
-                    background: active ? cfg?.dot : "rgba(255,255,255,.4)",
-                    display:"inline-block" }} />
-                )}
+                {f.dot && <span style={{ width:6, height:6, borderRadius:"50%",
+                  background: active ? cfg.color : "rgba(255,255,255,.5)",
+                  display:"inline-block", marginRight:5 }} />}
                 {f.label}
               </button>
             );
           })}
         </div>
-      </header>
+      </div>
 
-      {/* ══════════════ CONTENIDO ══════════════ */}
-      <main style={{ padding:"8px 16px 60px", maxWidth:1400, margin:"0 auto" }}>
+      {/* ══ LISTA ══ */}
+      <div style={{ padding:"12px 0 80px" }}>
 
-        {/* Loading */}
         {loading && (
           <div style={{ display:"flex", flexDirection:"column", alignItems:"center",
-            justifyContent:"center", padding:"100px 20px", gap:16 }}>
-            <div style={{ width:46, height:46, border:"4px solid #e0e7ff",
+            padding:"80px 20px", gap:14 }}>
+            <div style={{ width:40, height:40, border:"3px solid #e2e8f0",
               borderTopColor:"#6366f1", borderRadius:"50%",
-              animation:"spin .7s linear infinite" }} />
-            <p style={{ fontSize:14, color:"#94a3b8", fontWeight:600 }}>Cargando turnos…</p>
+              animation:"spin .7s linear infinite" }}/>
+            <p style={{ fontSize:13, color:"#94a3b8", fontWeight:600 }}>Cargando turnos…</p>
           </div>
         )}
 
-        {/* Grupos por fecha */}
         {!loading && grouped.map(([fecha, evs]) => (
-          <div key={fecha} style={{ marginBottom:8 }}>
-            {/* Date divider */}
-            <div style={{ display:"flex", alignItems:"center", gap:12,
-              padding:"20px 0 12px", position:"sticky", top:196, zIndex:9,
-              background:"linear-gradient(180deg,#f0f4ff 80%,transparent)" }}>
-              <div style={{ flex:1, height:1.5,
-                background:"linear-gradient(90deg,#c7d2fe 0%,transparent 100%)" }} />
+          <div key={fecha}>
+            {/* Date header */}
+            <div style={{
+              display:"flex", alignItems:"center", gap:10,
+              padding:"16px 18px 8px",
+            }}>
               <div style={{
-                background:"#fff", border:"2px solid #e0e7ff",
-                borderRadius:99, padding:"7px 18px",
-                display:"flex", alignItems:"center", gap:8, flexShrink:0,
-                boxShadow:"0 4px 16px rgba(99,102,241,.12)",
+                background:"linear-gradient(135deg,#1e293b,#334155)",
+                borderRadius:12, padding:"6px 14px",
+                display:"flex", alignItems:"center", gap:8,
               }}>
-                <span style={{ fontSize:14 }}>📅</span>
-                <span style={{ fontSize:12.5, fontWeight:800, color:"#3730a3",
-                  fontFamily:"'Sora',sans-serif", textTransform:"capitalize" }}>
-                  {fecha === "Sin fecha" ? "Sin fecha" : formatDate(fecha)}
+                <span style={{ fontSize:12 }}>📅</span>
+                <span style={{ color:"#fff", fontSize:12, fontWeight:800,
+                  fontFamily:"'Plus Jakarta Sans',sans-serif",
+                  textTransform:"capitalize" }}>
+                  {fecha==="Sin fecha" ? "Sin fecha" : formatDate(fecha)}
                 </span>
-                <span style={{ background:"linear-gradient(135deg,#6366f1,#4f46e5)",
-                  color:"#fff", fontSize:10.5, fontWeight:800,
-                  padding:"2px 9px", borderRadius:99,
-                  boxShadow:"0 2px 8px rgba(99,102,241,.4)" }}>
-                  {evs.filter(e => e.estado !== "descanso").length}
-                </span>
+                <span style={{
+                  background:"#6366f1", color:"#fff",
+                  fontSize:10, fontWeight:900,
+                  width:20, height:20, borderRadius:"50%",
+                  display:"flex", alignItems:"center", justifyContent:"center",
+                }}>{evs.filter(e=>e.estado!=="descanso").length}</span>
               </div>
-              <div style={{ flex:1, height:1.5,
-                background:"linear-gradient(270deg,#c7d2fe 0%,transparent 100%)" }} />
             </div>
 
-            <div className="masonry">
-              {evs.map((ev, i) => (
-                <Card key={ev.id} ev={ev} idx={i}
-                  onClick={() => ev.estado !== "descanso" && setSelected(ev)} />
-              ))}
+            {/* Rows */}
+            <div style={{ display:"flex", flexDirection:"column", gap:0 }}>
+              {evs.map((ev, i) => {
+                const cfg = ESTADOS[ev.estado] || ESTADOS.pendiente;
+                const isBreak = ev.estado === "descanso";
+                const members = ev.integrantes
+                  ? ev.integrantes.split(",").map(s=>s.trim()).filter(Boolean)
+                  : [];
+
+                if (isBreak) return (
+                  <div key={ev.id} style={{
+                    display:"flex", alignItems:"center", gap:12,
+                    padding:"10px 18px", margin:"4px 12px",
+                    background:"#f1f5f9", borderRadius:12,
+                    animation:`fadeUp .3s ease ${i*40}ms both`,
+                  }}>
+                    <span style={{ fontSize:18 }}>☕</span>
+                    <div>
+                      <p style={{ fontSize:11, fontWeight:800, color:"#64748b", margin:0 }}>
+                        {ev.hora_inicio}{ev.hora_fin && ` – ${ev.hora_fin}`} · Receso
+                      </p>
+                      {ev.propuesta && <p style={{ fontSize:10, color:"#94a3b8", margin:0 }}>{ev.propuesta}</p>}
+                    </div>
+                  </div>
+                );
+
+                return (
+                  <div key={ev.id}
+                    className="row"
+                    onClick={() => setSelected(ev)}
+                    style={{
+                      display:"flex", alignItems:"center", gap:0,
+                      padding:"0 18px",
+                      cursor:"pointer", transition:"background .12s",
+                      animation:`fadeUp .35s ease ${i*50}ms both`,
+                      background:"transparent",
+                    }}
+                    onMouseEnter={e=>e.currentTarget.style.background="#f1f5f9"}
+                    onMouseLeave={e=>e.currentTarget.style.background="transparent"}
+                  >
+                    {/* Timeline dot + line */}
+                    <div style={{ display:"flex", flexDirection:"column",
+                      alignItems:"center", width:32, flexShrink:0, alignSelf:"stretch" }}>
+                      <div style={{ width:1, flex:1, background:"#e2e8f0",
+                        minHeight:10, marginBottom:2 }} />
+                      <div style={{
+                        width:12, height:12, borderRadius:"50%", flexShrink:0,
+                        background:ev.color, border:"2.5px solid #fff",
+                        boxShadow:`0 0 0 2px ${ev.color}44`,
+                        zIndex:1,
+                      }}/>
+                      <div style={{ width:1, flex:1, background:"#e2e8f0",
+                        minHeight:10, marginTop:2 }} />
+                    </div>
+
+                    {/* Card content */}
+                    <div style={{
+                      flex:1, borderBottom:"1px solid #f1f5f9",
+                      padding:"14px 0 14px 12px", minWidth:0,
+                    }}>
+                      <div style={{ display:"flex", alignItems:"flex-start",
+                        justifyContent:"space-between", gap:8, marginBottom:4 }}>
+                        <div style={{ minWidth:0, flex:1 }}>
+                          {/* Hora */}
+                          <span style={{
+                            fontSize:10, fontWeight:800, color:ev.color,
+                            letterSpacing:.3, display:"block", marginBottom:3,
+                          }}>
+                            {ev.hora_inicio}{ev.hora_fin && ` — ${ev.hora_fin}`}
+                          </span>
+                          {/* Nombre grupo */}
+                          <p style={{
+                            fontSize:15, fontWeight:800, color:"#0f172a",
+                            fontFamily:"'Plus Jakarta Sans',sans-serif",
+                            lineHeight:1.25, marginBottom:2,
+                            overflow:"hidden", textOverflow:"ellipsis", whiteSpace:"nowrap",
+                          }}>{ev.grupo}</p>
+                          {/* Propuesta */}
+                          <p style={{
+                            fontSize:12, color:"#64748b", lineHeight:1.5,
+                            overflow:"hidden", display:"-webkit-box",
+                            WebkitLineClamp:1, WebkitBoxOrient:"vertical",
+                            marginBottom:6,
+                          }}>{ev.propuesta}</p>
+                        </div>
+
+                        {/* Badge estado */}
+                        <span style={{
+                          flexShrink:0, fontSize:9.5, fontWeight:800,
+                          padding:"4px 9px", borderRadius:99,
+                          background:cfg.bg, color:cfg.color,
+                          border:`1px solid ${cfg.bg === "#e2e8f0" ? "#cbd5e1" : "transparent"}`,
+                          whiteSpace:"nowrap",
+                        }}>{cfg.label}</span>
+                      </div>
+
+                      {/* Footer row */}
+                      <div style={{ display:"flex", alignItems:"center",
+                        gap:6, flexWrap:"wrap" }}>
+                        {/* Avatares */}
+                        {members.length > 0 && (
+                          <div style={{ display:"flex", marginRight:2 }}>
+                            {members.slice(0,3).map((n,j) => (
+                              <div key={j} title={n} style={{
+                                width:20, height:20, borderRadius:"50%",
+                                border:"1.5px solid #fff",
+                                marginLeft: j>0 ? -6 : 0,
+                                background:`hsl(${(j*97+parseInt(ev.id||0)*43)%360},55%,62%)`,
+                                display:"flex", alignItems:"center", justifyContent:"center",
+                                fontSize:7, fontWeight:900, color:"#fff",
+                              }}>{initials(n)}</div>
+                            ))}
+                            {members.length > 3 && (
+                              <div style={{ width:20, height:20, borderRadius:"50%",
+                                border:"1.5px solid #fff", marginLeft:-6,
+                                background:"#e2e8f0", display:"flex",
+                                alignItems:"center", justifyContent:"center",
+                                fontSize:7, fontWeight:900, color:"#94a3b8" }}>
+                                +{members.length-3}
+                              </div>
+                            )}
+                          </div>
+                        )}
+                        {ev.salon && (
+                          <span style={{ fontSize:10, color:"#94a3b8", fontWeight:600 }}>
+                            🏫 {ev.salon}
+                          </span>
+                        )}
+                        {ev.profesor && (
+                          <span style={{ fontSize:10, color:"#94a3b8", fontWeight:600 }}>
+                            · 👤 {ev.profesor}
+                          </span>
+                        )}
+                        {ev.materia && (
+                          <span style={{
+                            fontSize:9.5, fontWeight:700,
+                            color:ev.color, background:`${ev.color}15`,
+                            padding:"2px 7px", borderRadius:99, marginLeft:"auto",
+                          }}>{ev.materia}</span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Chevron */}
+                    <div style={{ width:24, flexShrink:0, display:"flex",
+                      alignItems:"center", justifyContent:"center",
+                      color:"#cbd5e1", fontSize:16, paddingLeft:8 }}>›</div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         ))}
 
         {/* Empty */}
-        {!loading && filtered.filter(e => e.estado !== "descanso").length === 0 && (
-          <div style={{ textAlign:"center", padding:"80px 24px",
+        {!loading && filtered.filter(e=>e.estado!=="descanso").length===0 && (
+          <div style={{ textAlign:"center", padding:"60px 24px",
             animation:"fadeUp .4s ease both" }}>
-            <div style={{ fontSize:58, marginBottom:16,
-              animation:"float 3s ease-in-out infinite" }}>🔍</div>
-            <p style={{ fontSize:18, fontWeight:900, color:"#1e1b4b",
-              fontFamily:"'Sora',sans-serif", marginBottom:8 }}>Sin resultados</p>
-            <p style={{ fontSize:13.5, color:"#94a3b8", marginBottom:22 }}>
-              Prueba con otros filtros o términos de búsqueda
+            <div style={{ fontSize:48, marginBottom:12 }}>🔍</div>
+            <p style={{ fontSize:16, fontWeight:800, color:"#1e293b",
+              fontFamily:"'Plus Jakarta Sans',sans-serif", marginBottom:6 }}>Sin resultados</p>
+            <p style={{ fontSize:12.5, color:"#94a3b8", marginBottom:18 }}>
+              Prueba con otros filtros
             </p>
-            <button onClick={() => {
-              setFiltroEstado("todos"); setFiltroFecha("todas"); setBusqueda("");
-            }} style={{
-              padding:"12px 28px",
-              background:"linear-gradient(135deg,#6366f1,#4f46e5)",
-              color:"#fff", border:"none", borderRadius:14,
-              fontSize:13, fontWeight:800, cursor:"pointer",
-              fontFamily:"inherit",
-              boxShadow:"0 6px 20px rgba(99,102,241,.4)",
-            }}>Limpiar filtros</button>
+            <button onClick={()=>{setFiltroEstado("todos");setFiltroFecha("todas");setBusqueda("");}}
+              style={{ padding:"10px 22px",
+                background:"linear-gradient(135deg,#6366f1,#8b5cf6)",
+                color:"#fff", border:"none", borderRadius:12,
+                fontSize:13, fontWeight:800, cursor:"pointer",
+                fontFamily:"inherit" }}>
+              Limpiar filtros
+            </button>
           </div>
         )}
 
-        {/* Footer */}
-        {!loading && filtered.length > 0 && (
-          <p style={{ textAlign:"center", fontSize:11, color:"#a5b4fc",
-            fontWeight:700, padding:"20px 0 0", letterSpacing:.5 }}>
-            ✦ PanaTurno · {filtered.filter(e => e.estado !== "descanso").length} grupos ✦
+        {!loading && filtered.filter(e=>e.estado!=="descanso").length>0 && (
+          <p style={{ textAlign:"center", fontSize:11, color:"#cbd5e1",
+            fontWeight:600, padding:"20px 0 0" }}>
+            — {filtered.filter(e=>e.estado!=="descanso").length} grupos —
           </p>
         )}
-      </main>
+      </div>
 
-      {selected && <Modal ev={selected} onClose={() => setSelected(null)} />}
+      {selected && <Modal ev={selected} onClose={()=>setSelected(null)} />}
     </div>
   );
 }
